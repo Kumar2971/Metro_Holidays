@@ -24,15 +24,15 @@ const Navbar = () => {
     return (
         <nav
             className={`fixed w-full z-50 transition-all duration-500 ${isScrolled
-                    ? 'bg-white/90 backdrop-blur-lg shadow-lg py-4'
-                    : 'bg-transparent py-6'
+                ? 'bg-white/90 backdrop-blur-lg shadow-lg py-4'
+                : 'bg-transparent py-6'
                 }`}
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <div className="flex items-center space-x-2 animate-fade-in-down">
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
                             <svg
                                 className="w-7 h-7 text-white"
                                 fill="none"
@@ -47,7 +47,7 @@ const Navbar = () => {
                                 />
                             </svg>
                         </div>
-                        <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                        <span className="text-2xl font-bold text-gray-900">
                             Metro Holidays
                         </span>
                     </div>
@@ -58,11 +58,11 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className={`text-gray-700 hover:text-purple-600 font-medium transition-all duration-300 relative group animate-fade-in-down`}
+                                className={`text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative group animate-fade-in-down`}
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
                                 {link.name}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
                             </a>
                         ))}
                     </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
                     <div className="hidden md:block animate-fade-in-down">
                         <a
                             href="#booking"
-                            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow-md hover:bg-blue-700 hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                         >
                             Get Started
                         </a>
@@ -116,7 +116,7 @@ const Navbar = () => {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-gray-700 hover:text-purple-600 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-purple-50"
+                                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-blue-50"
                                 >
                                     {link.name}
                                 </a>
@@ -124,7 +124,7 @@ const Navbar = () => {
                             <a
                                 href="#booking"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold text-center shadow-lg"
+                                className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold text-center shadow-lg hover:bg-blue-700"
                             >
                                 Get Started
                             </a>

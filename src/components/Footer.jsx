@@ -9,11 +9,11 @@ const Footer = () => {
     }
 
     return (
-        <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white relative overflow-hidden">
+        <footer className="bg-slate-900 text-white relative overflow-hidden">
             {/* Animated Background */}
-            <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-float"></div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 left-0 w-96 h-96 bg-blue-900 rounded-full blur-3xl animate-float"></div>
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-800 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -22,7 +22,7 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center space-x-2 mb-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
                                 <svg
                                     className="w-7 h-7 text-white"
                                     fill="none"
@@ -39,21 +39,21 @@ const Footer = () => {
                             </div>
                             <span className="text-2xl font-bold">Metro Holidays</span>
                         </div>
-                        <p className="text-white/80 leading-relaxed mb-6">
+                        <p className="text-slate-300 leading-relaxed mb-6">
                             Your trusted travel companion. We're committed to providing safe, comfortable,
                             and reliable transportation services for every journey.
                         </p>
 
                         {/* Newsletter */}
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                        <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                             <h4 className="font-semibold mb-3">Subscribe to Our Newsletter</h4>
                             <div className="flex">
                                 <input
                                     type="email"
                                     placeholder="Your email"
-                                    className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-white/50"
+                                    className="flex-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-slate-400"
                                 />
-                                <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-r-lg font-semibold hover:shadow-lg transition-shadow">
+                                <button className="px-4 py-2 bg-blue-600 text-white rounded-r-lg font-semibold hover:bg-blue-700 transition-colors shadow-md">
                                     Subscribe
                                 </button>
                             </div>
@@ -69,7 +69,7 @@ const Footer = () => {
                                     <li key={link}>
                                         <a
                                             href="#"
-                                            className="text-white/70 hover:text-white transition-colors hover:translate-x-1 inline-block"
+                                            className="text-slate-300 hover:text-white transition-colors hover:translate-x-1 inline-block"
                                         >
                                             {link}
                                         </a>
@@ -84,18 +84,18 @@ const Footer = () => {
                 <div className="border-t border-white/10 py-8">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         {/* Copyright */}
-                        <div className="text-white/60 text-sm">
+                        <div className="text-slate-400 text-sm">
                             © {currentYear} Metro Holidays. All rights reserved. Made with ❤️ for travelers.
                         </div>
 
                         {/* Payment Methods */}
                         <div className="flex items-center space-x-4">
-                            <span className="text-white/60 text-sm">We Accept:</span>
+                            <span className="text-slate-400 text-sm">We Accept:</span>
                             <div className="flex space-x-2">
                                 {['Visa', 'MC', 'UPI', 'GPay'].map((method) => (
                                     <div
                                         key={method}
-                                        className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-lg text-xs font-semibold border border-white/20"
+                                        className="px-3 py-1 bg-white/5 backdrop-blur-sm rounded-lg text-xs font-semibold border border-white/10 text-slate-300"
                                     >
                                         {method}
                                     </div>
@@ -113,7 +113,7 @@ const Footer = () => {
                                 <a
                                     key={social.name}
                                     href="#"
-                                    className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 border border-white/20"
+                                    className="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-600/20 hover:text-blue-400 transition-all duration-300 hover:scale-110 border border-white/10 text-slate-300"
                                     aria-label={social.name}
                                 >
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ const Footer = () => {
 
                 {/* Trust Badges */}
                 <div className="border-t border-white/10 py-6">
-                    <div className="flex flex-wrap justify-center items-center gap-6 text-white/60 text-sm">
+                    <div className="flex flex-wrap justify-center items-center gap-6 text-slate-400 text-sm">
                         <div className="flex items-center space-x-2">
                             <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

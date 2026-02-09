@@ -8,7 +8,7 @@ const Features = () => {
             ),
             title: '24/7 Availability',
             description: 'Book your ride anytime, day or night. Our team is always ready to serve you with prompt and reliable service.',
-            gradient: 'from-purple-500 to-pink-500',
+            gradient: 'from-blue-500 to-blue-600',
         },
         {
             icon: (
@@ -18,7 +18,7 @@ const Features = () => {
             ),
             title: 'Verified Drivers',
             description: 'All our drivers undergo thorough background checks and training to ensure your safety and peace of mind throughout your journey.',
-            gradient: 'from-blue-500 to-cyan-500',
+            gradient: 'from-slate-600 to-slate-700',
         },
         {
             icon: (
@@ -28,7 +28,7 @@ const Features = () => {
             ),
             title: 'Affordable Pricing',
             description: 'Transparent and competitive rates with no hidden charges. Quality service that fits your budget perfectly.',
-            gradient: 'from-green-500 to-emerald-500',
+            gradient: 'from-green-500 to-emerald-600',
         },
         {
             icon: (
@@ -49,7 +49,7 @@ const Features = () => {
             ),
             title: 'Comfort First',
             description: 'Well-maintained, clean vehicles with air conditioning and comfortable seating for a pleasant journey every time.',
-            gradient: 'from-indigo-500 to-purple-500',
+            gradient: 'from-indigo-500 to-purple-600',
         },
         {
             icon: (
@@ -59,25 +59,25 @@ const Features = () => {
             ),
             title: 'Easy Booking',
             description: 'Simple and quick booking process. Reserve your vehicle in just a few clicks and get instant confirmation.',
-            gradient: 'from-pink-500 to-rose-500',
+            gradient: 'from-cyan-500 to-blue-500',
         },
     ]
 
     return (
         <section id="features" className="py-20 bg-white relative overflow-hidden">
             {/* Background Decorations */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30 translate-x-1/2 translate-y-1/2"></div>
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-30 translate-x-1/2 translate-y-1/2"></div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
-                    <span className="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full font-semibold text-sm mb-4">
+                    <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full font-semibold text-sm mb-4">
                         Why Choose Us
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                         Experience the{' '}
-                        <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                        <span className="text-blue-600">
                             Difference
                         </span>
                     </h2>
@@ -92,16 +92,16 @@ const Features = () => {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up border border-gray-100"
+                            className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up border border-gray-100"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             {/* Icon */}
-                            <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                            <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
                                 {feature.icon}
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors">
+                            <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">
                                 {feature.title}
                             </h3>
                             <p className="text-gray-600 leading-relaxed">
@@ -109,7 +109,7 @@ const Features = () => {
                             </p>
 
                             {/* Hover Effect Border */}
-                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                         </div>
                     ))}
                 </div>
@@ -118,7 +118,7 @@ const Features = () => {
                 <div className="text-center mt-16 animate-fade-in-up">
                     <a
                         href="#booking"
-                        className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                        className="inline-block px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                     >
                         Start Your Journey Today
                     </a>

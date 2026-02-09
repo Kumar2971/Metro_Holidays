@@ -23,57 +23,57 @@ const Safety = () => {
     ]
 
     return (
-        <section id="safety" className="py-20 bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50 relative overflow-hidden">
+        <section id="safety" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-white relative overflow-hidden">
             {/* Animated Background Elements */}
-            <div className="absolute top-20 right-10 w-72 h-72 bg-purple-300/20 rounded-full blur-3xl animate-float"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-blue-100 rounded-full blur-3xl animate-float"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-slate-100 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left Content */}
                     <div className="animate-fade-in-up">
-                        <span className="inline-block px-4 py-2 bg-white text-purple-600 rounded-full font-semibold text-sm mb-6 shadow-lg">
+                        <span className="inline-block px-4 py-2 bg-white text-blue-600 rounded-full font-semibold text-sm mb-6 shadow-sm border border-blue-100">
                             🛡️ Your Safety Matters
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
                             Safety is Not Just a Feature,{' '}
-                            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                            <span className="text-blue-600">
                                 It's Our Promise
                             </span>
                         </h2>
-                        <p className="text-xl text-gray-700 leading-relaxed mb-8">
+                        <p className="text-xl text-slate-600 leading-relaxed mb-8">
                             We understand that when you travel with us, you're trusting us with what matters most—your safety and that of your loved ones.
                             That's why we've built our entire service around one core principle: getting you to your destination safely, every single time.
                         </p>
 
                         {/* Safety Stats */}
                         <div className="grid grid-cols-2 gap-6 mb-8">
-                            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                                <div className="text-4xl font-bold text-purple-600 mb-2">100%</div>
-                                <div className="text-gray-600">Safety Compliance</div>
+                            <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
+                                <div className="text-4xl font-bold text-blue-600 mb-2">100%</div>
+                                <div className="text-gray-600 font-medium">Safety Compliance</div>
                             </div>
-                            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                                <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
-                                <div className="text-gray-600">Support Available</div>
+                            <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
+                                <div className="text-4xl font-bold text-slate-700 mb-2">24/7</div>
+                                <div className="text-gray-600 font-medium">Support Available</div>
                             </div>
-                            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                            <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
                                 <div className="text-4xl font-bold text-green-600 mb-2">Zero</div>
-                                <div className="text-gray-600">Compromise Policy</div>
+                                <div className="text-gray-600 font-medium">Compromise Policy</div>
                             </div>
-                            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                                <div className="text-4xl font-bold text-orange-600 mb-2">10K+</div>
-                                <div className="text-gray-600">Safe Journeys</div>
+                            <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
+                                <div className="text-4xl font-bold text-indigo-600 mb-2">10K+</div>
+                                <div className="text-gray-600 font-medium">Safe Journeys</div>
                             </div>
                         </div>
 
                         {/* Image */}
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-100">
                             <img
                                 src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80"
                                 alt="Safe travel"
                                 className="w-full h-64 object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent flex items-end p-6">
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent flex items-end p-6">
                                 <p className="text-white font-semibold text-lg">
                                     "Your family's safety is our responsibility"
                                 </p>
@@ -86,18 +86,18 @@ const Safety = () => {
                         {safetyFeatures.map((feature, index) => (
                             <div
                                 key={index}
-                                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-gray-100"
+                                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
                                 <div className="flex items-start space-x-4">
                                     {/* Icon */}
-                                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">
+                                    <div className="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-3xl group-hover:bg-blue-100 transition-colors duration-300">
                                         {feature.icon}
                                     </div>
 
                                     {/* Content */}
                                     <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
+                                        <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
                                             {feature.title}
                                         </h3>
                                         <p className="text-gray-600 leading-relaxed">
@@ -108,20 +108,20 @@ const Safety = () => {
 
                                 {/* Progress Bar Animation */}
                                 <div className="mt-4 h-1 bg-gray-100 rounded-full overflow-hidden">
-                                    <div className="h-full bg-gradient-to-r from-purple-600 to-blue-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></div>
+                                    <div className="h-full bg-blue-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
                                 </div>
                             </div>
                         ))}
 
                         {/* Additional Safety Badge */}
-                        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white shadow-2xl">
+                        <div className="bg-blue-600 rounded-2xl p-8 text-white shadow-xl">
                             <div className="flex items-center space-x-4">
-                                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl">
+                                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl border border-white/20">
                                     ✓
                                 </div>
                                 <div>
                                     <h4 className="text-xl font-bold mb-2">Certified & Verified</h4>
-                                    <p className="text-white/90">
+                                    <p className="text-blue-100">
                                         All safety standards meet and exceed government regulations
                                     </p>
                                 </div>
