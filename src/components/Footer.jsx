@@ -1,158 +1,102 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
     const currentYear = new Date().getFullYear()
 
     const footerLinks = {
-        Company: ['About Us', 'Our Fleet', 'Careers', 'Blog'],
-        Services: ['Airport Transfer', 'City Tours', 'Corporate Travel', 'Wedding Events'],
-        Support: ['Help Center', 'Safety', 'Terms & Conditions', 'Privacy Policy'],
-        Quick: ['Book Now', 'Track Booking', 'Cancel Booking', 'FAQs'],
+        Company: [
+            { name: 'About Us', path: '/' },
+            { name: 'Our Fleet', path: '/fleet' },
+            { name: 'Careers', path: '#' },
+            { name: 'Blog', path: '#' }
+        ],
+        Services: [
+            { name: 'Airport Transfer', path: '/features' },
+            { name: 'City Tours', path: '/features' },
+            { name: 'Corporate Travel', path: '/features' },
+            { name: 'Wedding Events', path: '/features' }
+        ],
+        Support: [
+            { name: 'Help Center', path: '/contact' },
+            { name: 'Safety', path: '/safety' },
+            { name: 'Privacy Policy', path: '/privacy-policy' }
+        ],
     }
 
     return (
-        <footer className="bg-slate-900 text-white relative overflow-hidden">
-            {/* Animated Background */}
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-0 w-96 h-96 bg-blue-900 rounded-full blur-3xl animate-float"></div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-800 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-            </div>
+        <footer className="relative bg-slate-900 text-white pt-20 overflow-hidden">
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Main Footer Content */}
-                <div className="py-16 grid md:grid-cols-2 lg:grid-cols-6 gap-8">
+
+            {/* Glowing Orbs - Hidden on mobile */}
+            <div className="hidden md:block absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+            <div className="hidden md:block absolute bottom-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div className="container mx-auto px-6 md:px-12 py-12 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
                     {/* Brand Section */}
-                    <div className="lg:col-span-2">
-                        <div className="flex items-center space-x-2 mb-6">
-                            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                                <svg
-                                    className="w-7 h-7 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                                    />
+                    <div className="lg:col-span-4 space-y-6">
+                        <Link to="/" className="flex items-center gap-3 group">
+                            <div className="relative h-12 w-12 flex items-center justify-center">
+                                {/* Background box - vibrant blue gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl group-hover:from-blue-500 group-hover:to-indigo-500 transition-all duration-300 shadow-md shadow-blue-600/30"></div>
+
+                                <svg className="h-9 w-9 text-white animate-car-ride transition-all duration-300 group-hover:scale-110 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M22 13h-3.5l-2.4-5.3A3 3 0 0 0 13.4 6H7a2 2 0 0 0-1.8 1.1L3.3 12H2v5h1.2a2.5 2.5 0 0 0 4.6 0H16.2a2.5 2.5 0 0 0 4.6 0H22v-4zM5.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm13 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                                 </svg>
+                                {/* Tire dust particles */}
+                                <div className="absolute left-1.5 bottom-1.5 w-1 h-1 bg-white/60 rounded-full animate-tire-dust z-10"></div>
+                                <div className="absolute left-2 bottom-2 w-0.5 h-0.5 bg-white/50 rounded-full animate-tire-dust-2 z-10"></div>
+                                <div className="absolute left-1 bottom-1 w-1 h-1 bg-white/40 rounded-full animate-tire-dust-3 z-10"></div>
+                                <div className="absolute right-1.5 bottom-1.5 w-0.5 h-0.5 bg-white/60 rounded-full animate-tire-dust z-10" style={{ animationDelay: '0.1s' }}></div>
+                                <div className="absolute right-2 bottom-2 w-0.5 h-0.5 bg-white/50 rounded-full animate-tire-dust-2 z-10" style={{ animationDelay: '0.3s' }}></div>
                             </div>
-                            <span className="text-2xl font-bold">Metro Holidays</span>
-                        </div>
-                        <p className="text-slate-300 leading-relaxed mb-6">
-                            Your trusted travel companion. We're committed to providing safe, comfortable,
-                            and reliable transportation services for every journey.
+                            <div className="flex flex-col justify-center h-12">
+                                <span className="text-2xl font-black tracking-tighter uppercase italic leading-none text-white">
+                                    METRO
+                                </span>
+                                <span className="text-[0.6rem] font-bold uppercase tracking-[0.4em] text-blue-400 leading-tight ml-0.5 mt-0.5">
+                                    HOLIDAYS
+                                </span>
+                            </div>
+                        </Link>
+                        <p className="text-slate-400 leading-relaxed text-lg">
+                            Elevating your travel experience with premium fleet and professional service. Every mile with us is a memory cherished.
                         </p>
 
-                        {/* Newsletter */}
-                        <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                            <h4 className="font-semibold mb-3">Subscribe to Our Newsletter</h4>
-                            <div className="flex">
-                                <input
-                                    type="email"
-                                    placeholder="Your email"
-                                    className="flex-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-slate-400"
-                                />
-                                <button className="px-4 py-2 bg-blue-600 text-white rounded-r-lg font-semibold hover:bg-blue-700 transition-colors shadow-md">
-                                    Subscribe
-                                </button>
-                            </div>
-                        </div>
                     </div>
 
-                    {/* Links Sections */}
-                    {Object.entries(footerLinks).map(([category, links]) => (
-                        <div key={category}>
-                            <h4 className="text-lg font-bold mb-4">{category}</h4>
-                            <ul className="space-y-2">
-                                {links.map((link) => (
-                                    <li key={link}>
-                                        <a
-                                            href="#"
-                                            className="text-slate-300 hover:text-white transition-colors hover:translate-x-1 inline-block"
-                                        >
-                                            {link}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                    {/* Links Grid */}
+                    <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+                        {Object.entries(footerLinks).map(([category, links]) => (
+                            <div key={category}>
+                                <h4 className="text-lg font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 inline-block">
+                                    {category}
+                                </h4>
+                                <ul className="space-y-4">
+                                    {links.map((link) => (
+                                        <li key={link.name}>
+                                            <a
+                                                href={link.path}
+                                                className="text-slate-400 hover:text-blue-400 transition-colors duration-300 flex items-center group"
+                                            >
+                                                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-0 opacity-0 group-hover:opacity-100 group-hover:mr-2 transition-all duration-300"></span>
+                                                {link.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-white/10 py-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        {/* Copyright */}
-                        <div className="text-slate-400 text-sm">
-                            © {currentYear} Metro Holidays. All rights reserved. Made with ❤️ for travelers.
-                        </div>
+                <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <p className="text-slate-500 text-sm">
+                        © {currentYear} Metro Holidays. All rights reserved.
+                    </p>
 
-                        {/* Payment Methods */}
-                        <div className="flex items-center space-x-4">
-                            <span className="text-slate-400 text-sm">We Accept:</span>
-                            <div className="flex space-x-2">
-                                {['Visa', 'MC', 'UPI', 'GPay'].map((method) => (
-                                    <div
-                                        key={method}
-                                        className="px-3 py-1 bg-white/5 backdrop-blur-sm rounded-lg text-xs font-semibold border border-white/10 text-slate-300"
-                                    >
-                                        {method}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
 
-                        {/* Social Links */}
-                        <div className="flex space-x-3">
-                            {[
-                                { name: 'Facebook', icon: 'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z' },
-                                { name: 'Twitter', icon: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z' },
-                                { name: 'Instagram', icon: 'M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01' },
-                            ].map((social) => (
-                                <a
-                                    key={social.name}
-                                    href="#"
-                                    className="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-600/20 hover:text-blue-400 transition-all duration-300 hover:scale-110 border border-white/10 text-slate-300"
-                                    aria-label={social.name}
-                                >
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={social.icon} />
-                                    </svg>
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Trust Badges */}
-                <div className="border-t border-white/10 py-6">
-                    <div className="flex flex-wrap justify-center items-center gap-6 text-slate-400 text-sm">
-                        <div className="flex items-center space-x-2">
-                            <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span>100% Secure Payments</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span>Verified Drivers</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span>24/7 Support</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span>Licensed & Insured</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </footer>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://metroholidays.com/sitemap.xml
+Sitemap: https://metroholidays.in/sitemap.xml

@@ -56,7 +56,7 @@ const Testimonials = () => {
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
                     <span className="inline-block px-4 py-2 bg-white text-purple-600 rounded-full font-semibold text-sm mb-4 shadow-lg">
-                        ⭐ Customer Stories
+                        <span className="mr-4">⭐</span>Customer Stories
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                         What Our{' '}
@@ -70,12 +70,12 @@ const Testimonials = () => {
                 </div>
 
                 {/* Testimonial Carousel */}
-                <div className="max-w-4xl mx-auto">
-                    <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl animate-fade-in-up">
+                <div className="max-w-4xl mx-auto w-full">
+                    <div className="relative bg-white rounded-2xl md:rounded-3xl p-4 sm:p-8 md:p-12 shadow-2xl animate-fade-in-up w-full">
                         {/* Testimonial Content */}
-                        <div className="text-center mb-8">
+                        <div className="text-center mb-6 sm:mb-8">
                             {/* Image */}
-                            <div className="relative inline-block mb-6">
+                            <div className="relative inline-block mb-4 sm:mb-6">
                                 <img
                                     src={testimonials[activeIndex].image}
                                     alt={testimonials[activeIndex].name}
@@ -87,7 +87,7 @@ const Testimonials = () => {
                             </div>
 
                             {/* Stars */}
-                            <div className="flex justify-center mb-4">
+                            <div className="flex justify-center mb-2 sm:mb-4">
                                 {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
                                     <svg
                                         key={i}
@@ -100,14 +100,14 @@ const Testimonials = () => {
                             </div>
 
                             {/* Text */}
-                            <p className="text-xl text-gray-700 leading-relaxed mb-6 italic">
+                            <p className="text-base sm:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6 italic">
                                 "{testimonials[activeIndex].text}"
                             </p>
 
                             {/* Trip Badge */}
-                            <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full mb-6">
-                                <span className="text-sm font-semibold text-purple-600">
-                                    📍 {testimonials[activeIndex].trip}
+                            <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full mb-4 sm:mb-6">
+                                <span className="inline-block text-sm font-semibold text-purple-600">
+                                    <span className="mr-4">📍</span>{testimonials[activeIndex].trip}
                                 </span>
                             </div>
 
@@ -121,10 +121,11 @@ const Testimonials = () => {
                         </div>
 
                         {/* Navigation Buttons */}
-                        <div className="flex items-center justify-center space-x-4">
+                        <div className="flex items-center justify-center space-x-2 sm:space-x-4">
                             <button
                                 onClick={prevTestimonial}
-                                className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
+                                className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 focus:outline-none"
+                                aria-label="Previous testimonial"
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -132,22 +133,24 @@ const Testimonials = () => {
                             </button>
 
                             {/* Dots */}
-                            <div className="flex space-x-2">
+                            <div className="flex space-x-1 sm:space-x-2">
                                 {testimonials.map((_, index) => (
                                     <button
                                         key={index}
                                         onClick={() => setActiveIndex(index)}
-                                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === activeIndex
-                                                ? 'bg-gradient-to-r from-purple-600 to-blue-600 w-8'
-                                                : 'bg-gray-300 hover:bg-gray-400'
+                                        className={`h-3 rounded-full transition-all duration-300 focus:outline-none ${index === activeIndex
+                                            ? 'bg-gradient-to-r from-purple-600 to-blue-600 w-6 sm:w-8'
+                                            : 'bg-gray-300 hover:bg-gray-400 w-3'
                                             }`}
+                                        aria-label={`Go to testimonial ${index + 1}`}
                                     />
                                 ))}
                             </div>
 
                             <button
                                 onClick={nextTestimonial}
-                                className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
+                                className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 focus:outline-none"
+                                aria-label="Next testimonial"
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -157,8 +160,8 @@ const Testimonials = () => {
                     </div>
 
                     {/* Stats */}
-                    <div className="grid md:grid-cols-3 gap-6 mt-12">
-                        <div className="text-center p-6 bg-white rounded-2xl shadow-lg animate-fade-in-up">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
+                        <div className="text-center p-4 sm:p-6 bg-white rounded-2xl shadow-lg animate-fade-in-up">
                             <div className="text-4xl font-bold text-purple-600 mb-2">4.9/5</div>
                             <div className="text-gray-600">Average Rating</div>
                         </div>

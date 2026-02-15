@@ -31,3 +31,22 @@
 body {
   overflow-x: hidden;
 }
+
+/* Floating animation for background shapes */
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Bouncing animation for action button */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-bounce {
+  animation: bounce 1.8s infinite;
+}

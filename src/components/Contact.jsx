@@ -7,7 +7,7 @@ const Contact = () => {
                 </svg>
             ),
             title: 'Phone',
-            details: ['+91 98765 43210', '+91 87654 32109'],
+            details: ['+91 79040 37684', '+91 85310 48568'],
             gradient: 'from-green-500 to-emerald-500',
         },
         {
@@ -17,20 +17,10 @@ const Contact = () => {
                 </svg>
             ),
             title: 'Email',
-            details: ['info@metroholidays.com', 'support@metroholidays.com'],
+            details: ['Kumarn2971@gmail.com', 'support@metroholidays.in'],
             gradient: 'from-blue-500 to-cyan-500',
         },
-        {
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-            ),
-            title: 'Office',
-            details: ['123 Metro Plaza, MG Road', 'Bangalore, Karnataka 560001'],
-            gradient: 'from-purple-500 to-pink-500',
-        },
+
         {
             icon: (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,16 +34,16 @@ const Contact = () => {
     ]
 
     return (
-        <section id="contact" className="py-20 bg-white relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-40"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+        <section id="contact" className="py-12 md:py-16 bg-white relative overflow-hidden">
+            {/* Background Elements - Hidden on mobile */}
+            <div className="hidden md:block absolute top-0 left-0 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-40"></div>
+            <div className="hidden md:block absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 relative z-10">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
                     <span className="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full font-semibold text-sm mb-4">
-                        📞 Get in Touch
+                        <span className="mr-4">📞</span>Get in Touch
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                         We're Here to{' '}
@@ -101,33 +91,14 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        {/* Social Media */}
-                        <div className="bg-white rounded-2xl p-8 shadow-lg">
-                            <h4 className="text-xl font-bold text-gray-800 mb-4">Follow Us</h4>
-                            <div className="flex space-x-4">
-                                {[
-                                    { name: 'Facebook', color: 'from-blue-600 to-blue-700' },
-                                    { name: 'Twitter', color: 'from-sky-500 to-sky-600' },
-                                    { name: 'Instagram', color: 'from-pink-500 to-purple-600' },
-                                    { name: 'LinkedIn', color: 'from-blue-700 to-blue-800' },
-                                ].map((social, idx) => (
-                                    <button
-                                        key={idx}
-                                        className={`w-12 h-12 bg-gradient-to-br ${social.color} rounded-xl flex items-center justify-center text-white shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300`}
-                                    >
-                                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
-                                        </svg>
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
+
                     </div>
 
                     {/* Map & Quick Info */}
                     <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                         {/* Map Placeholder */}
-                        <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl h-96 relative group">
+                        {/* Map Placeholder */}
+                        {/* <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl h-96 relative group">
                             <img
                                 src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80"
                                 alt="Office location"
@@ -146,7 +117,7 @@ const Contact = () => {
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Quick Contact */}
                         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg">
@@ -155,7 +126,7 @@ const Contact = () => {
                                 Need immediate assistance? Our emergency hotline is available 24/7 for urgent matters.
                             </p>
                             <a
-                                href="tel:+919876543210"
+                                href="tel:+917904037684"
                                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                             >
                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

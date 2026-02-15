@@ -1,6 +1,6 @@
 import { Users, Briefcase, Snowflake, Music, MapPin, Wifi, Star, ShieldCheck, CheckCircle, Wrench } from 'lucide-react';
 
-const Fleet = () => {
+const Fleet = ({ onBookNow }) => {
     const vehicles = [
         {
             name: 'Comfortable Sedan',
@@ -46,16 +46,16 @@ const Fleet = () => {
     ]
 
     return (
-        <section id="fleet" className="py-20 bg-gray-50 relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-30"></div>
+        <section id="fleet" className="py-12 md:py-16 bg-white relative overflow-hidden">
+            {/* Background Elements - Hidden on mobile */}
+            <div className="hidden md:block absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
+            <div className="hidden md:block absolute bottom-0 left-0 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-30"></div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 relative z-10">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
                     <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full font-semibold text-sm mb-4">
-                        🚗 Our Fleet
+                        <span className="mr-4">🚗</span>Our Fleet
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                         Choose Your{' '}
@@ -70,80 +70,87 @@ const Fleet = () => {
                 </div>
 
                 {/* Vehicles Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     {vehicles.map((vehicle, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up border border-gray-100"
+                            className="group relative bg-white rounded-[2rem] overflow-hidden transition-all duration-500 border border-gray-50 -translate-y-2 shadow-2xl shadow-blue-500/20 md:translate-y-0 md:shadow-lg md:shadow-gray-200/50 md:hover:-translate-y-2 md:hover:shadow-2xl md:hover:shadow-blue-500/10"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
-                            {/* Popular Badge */}
+                            {/* Popular Badge - Floating */}
                             {vehicle.popular && (
-                                <div className="absolute top-4 right-4 z-20 px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1">
-                                    <Star className="w-3 h-3 fill-current" /> POPULAR
+                                <div className="absolute top-4 left-4 z-20 px-4 py-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-bold tracking-widest rounded-full shadow-lg shadow-orange-500/30 flex items-center gap-1 backdrop-blur-sm">
+                                    <Star className="w-3 h-3 fill-current" /> BEST SELLER
                                 </div>
                             )}
 
-                            {/* Image */}
-                            <div className="relative h-48 overflow-hidden">
+                            {/* Image Area */}
+                            {/* Image Area */}
+                            <div className="relative h-64 overflow-hidden bg-gray-100">
                                 <img
                                     src={vehicle.image}
-                                    alt={vehicle.name}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    alt={`${vehicle.name} Rental in Coimbatore`}
+                                    className="w-full h-full object-cover md:group-hover:scale-110 transition-transform duration-700 ease-out"
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
                                 />
-                                <div className={`absolute inset-0 bg-gradient-to-t ${vehicle.gradient} opacity-10 group-hover:opacity-20 transition-opacity`}></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-60"></div>
+
+                                {/* Floating Price Tag */}
+                                <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-white/50">
+                                    <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Starting</div>
+                                    <div className="text-xl font-black text-gray-900">{vehicle.price}</div>
+                                </div>
                             </div>
 
                             {/* Content */}
-                            <div className="p-6">
-                                {/* Category Badge */}
-                                <span className={`inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full mb-3`}>
+                            <div className="p-6 relative">
+                                {/* Category */}
+                                <div className={`inline-block px-3 py-1 bg-gray-50 text-gray-400 text-[10px] font-bold tracking-widest uppercase rounded-full mb-3 border border-gray-100`}>
                                     {vehicle.category}
-                                </span>
+                                </div>
 
-                                <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">
+                                <h3 className="text-xl font-black text-gray-900 mb-4 group-hover:text-blue-600 transition-colors line-clamp-1">
                                     {vehicle.name}
                                 </h3>
 
-                                {/* Details */}
-                                <div className="space-y-3 mb-6">
-                                    <div className="flex items-center text-gray-600">
-                                        <Users className="w-5 h-5 mr-3 text-gray-400" />
-                                        <span className="text-sm font-medium">{vehicle.passengers}</span>
+                                {/* Quick Specs */}
+                                <div className="grid grid-cols-2 gap-4 mb-6">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                                            <Users className="w-4 h-4" />
+                                        </div>
+                                        <span className="text-xs font-semibold text-gray-600">{vehicle.passengers}</span>
                                     </div>
-                                    <div className="flex items-center text-gray-600">
-                                        <Briefcase className="w-5 h-5 mr-3 text-gray-400" />
-                                        <span className="text-sm font-medium">{vehicle.luggage}</span>
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                                            <Briefcase className="w-4 h-4" />
+                                        </div>
+                                        <span className="text-xs font-semibold text-gray-600">{vehicle.luggage}</span>
                                     </div>
                                 </div>
 
-                                {/* Features */}
+                                {/* Features Tags - Minimal */}
                                 <div className="flex flex-wrap gap-2 mb-6">
-                                    {vehicle.features.map((feature, idx) => (
-                                        <span
-                                            key={idx}
-                                            className="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md border border-gray-100 flex items-center gap-1"
-                                        >
-                                            {/* Optional: Add icons for specific features if desired, keeping it simple for now */}
+                                    {vehicle.features.slice(0, 3).map((feature, idx) => (
+                                        <span key={idx} className="text-[10px] font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded-md">
                                             {feature}
                                         </span>
                                     ))}
+                                    {vehicle.features.length > 3 && (
+                                        <span className="text-[10px] font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded-md">+{vehicle.features.length - 3}</span>
+                                    )}
                                 </div>
 
-                                {/* Price & CTA */}
-                                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                                    <div>
-                                        <div className="text-xs text-gray-400 font-medium uppercase tracking-wider">Starting from</div>
-                                        <div className="text-2xl font-bold text-blue-600">{vehicle.price}</div>
-                                    </div>
-                                    <button className={`px-4 py-2 bg-gradient-to-r ${vehicle.gradient} text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300`}>
-                                        Book Now
-                                    </button>
-                                </div>
+                                <button
+                                    onClick={() => onBookNow(vehicle.name)}
+                                    className="w-full py-4 bg-gray-900 text-white rounded-xl font-bold text-sm shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:bg-black transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                                >
+                                    Book Now
+                                    <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                                </button>
                             </div>
-
-                            {/* Hover Border Effect */}
-                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${vehicle.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}></div>
                         </div>
                     ))}
                 </div>

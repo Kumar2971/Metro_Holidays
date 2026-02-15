@@ -8,121 +8,126 @@ const Hero = () => {
     }, [])
 
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 md:pt-32 pb-8 sm:pb-0">
             {/* Animated Background */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900/10 via-blue-900/10 to-gray-900/10"></div>
                 <img
-                    src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&q=80"
+                    src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&q=75"
+                    srcSet="
+                        https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=640&q=60 640w,
+                        https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1024&q=70 1024w,
+                        https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&q=75 1920w
+                    "
+                    sizes="100vw"
                     alt="Scenic road trip"
                     className="w-full h-full object-cover opacity-20"
+                    fetchPriority="high"
+                    loading="eager"
+                    width="1920"
+                    height="1080"
                 />
                 {/* Animated Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-blue-50/40"></div>
             </div>
 
-            {/* Floating Elements */}
-            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl animate-float"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+            {/* Floating Elements - Optimized for mobile */}
+            <div className="absolute top-20 left-10 w-36 h-36 md:w-72 md:h-72 bg-blue-200/20 rounded-full blur-3xl animate-float will-change-transform"></div>
+            <div className="absolute bottom-20 right-10 w-48 h-48 md:w-96 md:h-96 bg-indigo-200/20 rounded-full blur-3xl animate-float will-change-transform" style={{ animationDelay: '1s' }}></div>
 
             {/* Content */}
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="container mx-auto px-6 md:px-12 z-10 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Left Content */}
                     <div className={`space-y-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                        <div className="inline-block">
-                            <span className="px-4 py-2 bg-blue-50 text-blue-700 font-medium rounded-full text-sm shadow-sm border border-blue-100">
-                                ✨ Your Journey, Our Priority
-                            </span>
-                        </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold leading-tight text-gray-900">
-                            Travel Safe,
+
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight text-gray-900">
+                            Coimbatore's
                             <br />
-                            <span className="text-blue-600">Travel Smart</span>
+                            <span className="transparent-text bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-gradient-x">
+                                Best Travels
+                            </span>
                         </h1>
 
-                        <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                            Experience the freedom of the open road with our reliable and comfortable vehicles.
-                            We prioritize your safety and comfort.
+                        <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-lg font-medium">
+                            Elevate your journey with Metro Holidays. Experience the perfect blend of luxury, safety, and affordability in every ride.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4">
                             <a
                                 href="#booking"
-                                className="group px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
+                                className="group relative px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden text-center"
                             >
-                                Book Your Ride
-                                <span className="inline-block ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <span className="relative flex items-center justify-center gap-2">
+                                    Book Now
+                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                </span>
                             </a>
                             <a
                                 href="#fleet"
-                                className="px-8 py-4 bg-white text-gray-700 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 border border-gray-200 text-center hover:text-blue-600"
+                                className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-800 rounded-2xl font-bold text-lg shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-200/80 hover:-translate-y-1 transition-all duration-300 border border-white/50 text-center"
                             >
                                 View Fleet
                             </a>
                         </div>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-3 gap-6 pt-8">
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-blue-600">10K+</div>
-                                <div className="text-sm text-gray-600 mt-1">Happy Travelers</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-indigo-600">50+</div>
-                                <div className="text-sm text-gray-600 mt-1">Destinations</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-slate-600">100%</div>
-                                <div className="text-sm text-gray-600 mt-1">Safety Record</div>
-                            </div>
+                        {/* Modern Floating Stats */}
+                        <div className="grid grid-cols-3 gap-4 pt-10">
+                            {[
+                                { label: 'Happy Customers', value: '100+', color: 'text-blue-600' },
+                                { label: 'Destinations', value: '20+', color: 'text-indigo-600' },
+                                { label: 'Safety Record', value: '100%', color: 'text-purple-600' },
+                            ].map((stat, idx) => (
+                                <div key={idx} className="group relative bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/50 shadow-lg -translate-y-1 md:shadow-sm md:translate-y-0 md:hover:shadow-md md:hover:-translate-y-1 transition-all duration-300">
+                                    <div className={`text-2xl sm:text-3xl font-black ${stat.color} mb-1`}>{stat.value}</div>
+                                    <div className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide">{stat.label}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Right Content - Image */}
-                    <div className={`relative ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-                        <div className="relative">
-                            {/* Main Image */}
-                            <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 ring-1 ring-gray-100">
-                                <img
-                                    src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80"
-                                    alt="Luxury car on scenic route"
-                                    className="w-full h-auto"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
-                            </div>
-
-                            {/* Floating Card */}
-                            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl animate-float border border-gray-100">
-                                <div className="flex items-center space-x-4">
-                                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white shadow-md">
-                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
+                    {/* Right Content - Abstract Composition */}
+                    <div className={`relative mt-12 lg:mt-0 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+                        <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/20 ring-8 ring-white/50 transform rotate-2 hover:rotate-0 transition-all duration-700 ease-out-expo">
+                            <img
+                                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=75"
+                                srcSet="
+                                    https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&q=60 400w,
+                                    https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=75 800w,
+                                    https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&q=80 1200w
+                                "
+                                sizes="(max-width: 1024px) 90vw, 50vw"
+                                alt="Luxury Travel Experience"
+                                className="w-full h-auto object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
+                                width="800"
+                                height="600"
+                                loading="eager"
+                            />
+                            {/* Glass Overlay Card */}
+                            {/* Glass Overlay Card - Now Interactive */}
+                            <a href="#booking" className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl shadow-xl -translate-y-1 md:shadow-lg md:translate-y-0 md:hover:bg-white/20 transition-all duration-300 cursor-pointer group/card block">
+                                <div className="flex items-center justify-between text-white">
                                     <div>
-                                        <div className="font-bold text-gray-800">Verified Safe</div>
-                                        <div className="text-sm text-gray-500">All vehicles inspected</div>
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                                            <p className="text-sm font-medium opacity-80">Next Available Ride</p>
+                                        </div>
+                                        <p className="text-lg font-bold group-hover/card:text-blue-200 transition-colors">Toyota Innova Crysta</p>
+                                    </div>
+                                    <div className="h-10 w-10 bg-white text-blue-900 rounded-full flex items-center justify-center font-bold shadow-lg group-hover/card:scale-110 group-hover/card:bg-blue-600 group-hover/card:text-white transition-all duration-300">
+                                        Go
                                     </div>
                                 </div>
-                            </div>
-
-                            {/* Decorative Elements */}
-                            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-400/30 rounded-full blur-2xl animate-pulse"></div>
+                            </a>
                         </div>
+
+                        {/* Background blobs for depth */}
+                        <div className="absolute -top-10 -right-10 w-36 h-36 md:w-72 md:h-72 bg-purple-500/30 rounded-full blur-[80px] -z-10 animate-pulse-slow"></div>
+                        <div className="absolute -bottom-10 -left-10 w-36 h-36 md:w-72 md:h-72 bg-blue-500/30 rounded-full blur-[80px] -z-10 animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
                     </div>
                 </div>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <a href="#features" className="flex flex-col items-center text-gray-600 hover:text-purple-600 transition-colors">
-                    <span className="text-sm mb-2">Scroll to explore</span>
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
-                </a>
             </div>
         </section>
     )
