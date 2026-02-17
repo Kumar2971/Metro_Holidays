@@ -53,7 +53,7 @@ const Home = ({ selectedVehicle, handleVehicleSelect }) => {
             <Helmet>
                 <title>Metro Holidays - Best Travels in Coimbatore | Safe Car Rentals</title>
                 <meta name="description" content="Looking for the best travels in Coimbatore? Metro Holidays offers safe, reliable, and comfortable car rentals and taxi services for local and outstation trips." />
-                <meta name="keywords" content="coimbatore travels, travels in coimbatore, car rental coimbatore, taxi service coimbatore, cab booking coimbatore, best travels coimbatore, metro holidays" />
+                <meta name="keywords" content="coimbatore travels, covai travels, coimbatore best travels, covai best travels, coimbatore car travels, covai car travels, travels in coimbatore, car rental coimbatore, taxi service coimbatore, cab booking coimbatore, metro holidays" />
                 <link rel="canonical" href="https://metroholidays.in/" />
                 <meta property="og:title" content="Metro Holidays - Best Travels in Coimbatore | Safe Car Rentals" />
                 <meta property="og:description" content="Safe, reliable, and comfortable car rentals and taxi services in Coimbatore." />
@@ -66,6 +66,7 @@ const Home = ({ selectedVehicle, handleVehicleSelect }) => {
                             "@context": "https://schema.org",
                             "@type": "TravelAgency",
                             "name": "Metro Holidays",
+                            "alternateName": ["Covai Travels", "Coimbatore Travels"],
                             "image": "https://metroholidays.in/og-image.png",
                             "@id": "https://metroholidays.in",
                             "url": "https://metroholidays.in",
@@ -79,6 +80,7 @@ const Home = ({ selectedVehicle, handleVehicleSelect }) => {
                                 "postalCode": "641001",
                                 "addressCountry": "IN"
                             },
+                            "areaServed": ["Coimbatore", "Covai", "Tamil Nadu", "South India"],
                             "geo": {
                                 "@type": "GeoCoordinates",
                                 "latitude": 11.0168,
