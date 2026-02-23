@@ -58,8 +58,8 @@ function App() {
         </div>
 
         <Helmet>
-          <title>Metro Holidays - Best Travels in Coimbatore | Safe Car Rentals</title>
-          <meta name="description" content="Looking for the best travels in Coimbatore? Metro Holidays offers safe, reliable, and comfortable car rentals and taxi services for local and outstation trips." />
+          <title>Coimbatore Travels | Metro Holidays - Best Car Rental & Taxi Service</title>
+          <meta name="description" content="Coimbatore Travels at its best with Metro Holidays. We offer premium car rental, reliable outstation cab booking, and top-rated taxi service in Covai." />
           <meta name="keywords" content="coimbatore travels, covai travels, coimbatore best travels, covai best travels, coimbatore car travels, covai car travels, travels in coimbatore, car rental coimbatore, taxi service coimbatore, cab booking coimbatore, metro holidays" />
           <link rel="canonical" href="https://metroholidays.in/" />
         </Helmet>
