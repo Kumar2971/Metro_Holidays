@@ -51,22 +51,23 @@ const Home = ({ selectedVehicle, handleVehicleSelect }) => {
     return (
         <>
             <Helmet>
-                <title>Metro Holidays - Best Travels in Coimbatore | Safe Car Rentals</title>
-                <meta name="description" content="Looking for the best travels in Coimbatore? Metro Holidays offers safe, reliable, and comfortable car rentals and taxi services for local and outstation trips." />
-                <meta name="keywords" content="coimbatore travels, covai travels, coimbatore best travels, covai best travels, coimbatore car travels, covai car travels, travels in coimbatore, car rental coimbatore, taxi service coimbatore, cab booking coimbatore, metro holidays" />
+                <title>Coimbatore Travels | Coimbatore Car Travels - Metro Holidays</title>
+                <meta name="description" content="Looking for the best Coimbatore travels and car travels? Metro Holidays offers top-rated car rentals, local & outstation taxi services, and cab booking in Coimbatore." />
+                <meta name="keywords" content="coimbatore travels, coimbatore car travels, travels in coimbatore, car travels in coimbatore, travels coimbatore, coimbatore travels list, best travels in coimbatore, car rentals coimbatore, taxi service coimbatore, cab booking coimbatore, metro holidays, covai travels" />
                 <link rel="canonical" href="https://metroholidays.in/" />
-                <meta property="og:title" content="Metro Holidays - Best Travels in Coimbatore | Safe Car Rentals" />
-                <meta property="og:description" content="Safe, reliable, and comfortable car rentals and taxi services in Coimbatore." />
+                <meta property="og:title" content="Coimbatore Travels | Coimbatore Car Travels - Metro Holidays" />
+                <meta property="og:description" content="Metro Holidays is the best travels in Coimbatore. Premium car travels, local & outstation taxi booking at the lowest rates." />
                 <meta property="og:url" content="https://metroholidays.in/" />
-                <meta property="twitter:title" content="Metro Holidays - Best Travels in Coimbatore" />
-                <meta property="twitter:description" content="Safe, reliable, and comfortable car rentals and taxi services in Coimbatore." />
+                <meta property="twitter:title" content="Coimbatore Travels | Coimbatore Car Travels - Metro Holidays" />
+                <meta property="twitter:description" content="Best travels in Coimbatore for premium car rentals and taxi service." />
                 <script type="application/ld+json">
                     {`
                         {
                             "@context": "https://schema.org",
                             "@type": "TravelAgency",
                             "name": "Metro Holidays",
-                            "alternateName": ["Covai Travels", "Coimbatore Travels"],
+                            "description": "Metro Holidays is the premier travel agency in Coimbatore, providing top-rated Coimbatore travels, local/outstation car rentals, and tour cab bookings.",
+                            "alternateName": ["Coimbatore Travels", "Coimbatore Car Travels", "Covai Travels"],
                             "image": "https://metroholidays.in/og-image.png",
                             "@id": "https://metroholidays.in",
                             "url": "https://metroholidays.in",
@@ -76,7 +77,7 @@ const Home = ({ selectedVehicle, handleVehicleSelect }) => {
                                 "@type": "PostalAddress",
                                 "streetAddress": "123 Metro Plaza, MG Road",
                                 "addressLocality": "Coimbatore",
-                                "addressRegion": "TN",
+                                "addressRegion": "Tamil Nadu",
                                 "postalCode": "641001",
                                 "addressCountry": "IN"
                             },

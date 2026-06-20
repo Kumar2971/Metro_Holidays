@@ -84,9 +84,9 @@ const Features = () => {
                         Why Choose Us
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-snug md:leading-normal">
-                        Experience the{' '}
+                        Coimbatore Car Travels{' '}
                         <span className="text-blue-600">
-                            Difference
+                            Service Features
                         </span>
                     </h2>
                     <p className="text-xl text-gray-600 leading-relaxed">

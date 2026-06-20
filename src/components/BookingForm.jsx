@@ -16,6 +16,7 @@ const BookingForm = ({ selectedVehicle }) => {
 
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [showSuccess, setShowSuccess] = useState(false)
+    const [submitError, setSubmitError] = useState(null)
 
     // Using objects to map values (matching Fleet component) to display labels
     const vehicles = [
@@ -41,31 +42,73 @@ const BookingForm = ({ selectedVehicle }) => {
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
+        setSubmitError(null)
 
-        // Simulate form submission
-        setTimeout(() => {
+        const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || ""
+
+        if (!accessKey || accessKey === "your_web3forms_access_key_here") {
+            setSubmitError("Web3Forms Access Key is not configured. Please add your key to the environment variables.")
             setIsSubmitting(false)
-            setShowSuccess(true)
+            return
+        }
 
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                setShowSuccess(false)
-                setFormData({
-                    from: '',
-                    to: '',
-                    date: '',
-                    time: '',
-                    passengers: '1',
-                    vehicle: '',
-                    name: '',
-                    email: '',
-                    phone: '',
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    access_key: accessKey,
+                    from_location: formData.from,
+                    to_location: formData.to,
+                    date: formData.date,
+                    time: formData.time,
+                    passengers: formData.passengers,
+                    vehicle: formData.vehicle,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    subject: `New Booking Request from ${formData.name}`,
+                    from_name: "Metro Holidays Booking",
                 })
-            }, 3000)
-        }, 1500)
+            })
+
+            const data = await response.json()
+
+            if (data.success) {
+                setIsSubmitting(false)
+                setShowSuccess(true)
+
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    setShowSuccess(false)
+                    setFormData({
+                        from: '',
+                        to: '',
+                        date: '',
+                        time: '',
+                        passengers: '1',
+                        vehicle: '',
+                        name: '',
+                        email: '',
+                        phone: '',
+                    })
+                }, 3000)
+            } else {
+                console.error("Web3Forms error response:", data)
+                setSubmitError(data.message || "Failed to submit booking. Please try again.")
+                setIsSubmitting(false)
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error)
+            setSubmitError("Network error occurred. Please check your internet connection and try again.")
+            setIsSubmitting(false)
+        }
     }
 
     return (
@@ -278,6 +321,11 @@ const BookingForm = ({ selectedVehicle }) => {
                                         </div>
                                     </div>
                                 </div>
+                                {submitError && (
+                                    <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-2xl text-center font-medium mb-4">
+                                        ⚠️ {submitError}
+                                    </div>
+                                )}
 
                                 <div className="pt-4">
                                     <button

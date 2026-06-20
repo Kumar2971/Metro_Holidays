@@ -20,7 +20,7 @@ const Hero = () => {
                         https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&q=75 1920w
                     "
                     sizes="100vw"
-                    alt="Scenic road trip"
+                    alt="Coimbatore Travels - Metro Holidays Local and Outstation Car Rentals"
                     className="w-full h-full object-cover opacity-20"
                     fetchPriority="high"
                     loading="eager"
@@ -43,15 +43,15 @@ const Hero = () => {
 
 
                         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight text-gray-900">
-                            Coimbatore's
+                            Coimbatore Travels
                             <br />
                             <span className="transparent-text bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-gradient-x">
-                                Best Travels
+                                & Car Rentals
                             </span>
                         </h1>
 
                         <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-lg font-medium">
-                            Elevate your journey with Metro Holidays. Experience the perfect blend of luxury, safety, and affordability in every ride.
+                            Experience the best Coimbatore car travels with Metro Holidays. Safe, reliable, and premium car rental services for outstation and local trips.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4">
@@ -99,7 +99,7 @@ const Hero = () => {
                                     https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&q=80 1200w
                                 "
                                 sizes="(max-width: 1024px) 90vw, 50vw"
-                                alt="Luxury Travel Experience"
+                                alt="Coimbatore Car Travels - Luxury Sedan Cab Services"
                                 className="w-full h-auto object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
                                 width="800"
                                 height="600"

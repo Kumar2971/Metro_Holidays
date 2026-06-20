@@ -58,9 +58,9 @@ const Fleet = ({ onBookNow }) => {
                         <span className="mr-4">🚗</span>Our Fleet
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                        Choose Your{' '}
+                        Coimbatore Travels{' '}
                         <span className="text-blue-600">
-                            Perfect Ride
+                            Fleet & Rates
                         </span>
                     </h2>
                     <p className="text-xl text-gray-600 leading-relaxed">
@@ -89,7 +89,7 @@ const Fleet = ({ onBookNow }) => {
                             <div className="relative h-64 overflow-hidden bg-gray-100">
                                 <img
                                     src={vehicle.image}
-                                    alt={`${vehicle.name} Rental in Coimbatore`}
+                                    alt={`${vehicle.name} - Coimbatore Car Travels`}
                                     className="w-full h-full object-cover md:group-hover:scale-110 transition-transform duration-700 ease-out"
                                     loading="lazy"
                                     width="600"
