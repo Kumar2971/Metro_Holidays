@@ -39,9 +39,9 @@ const Safety = () => {
                             <span className="mr-4">🛡️</span>Your Safety Matters
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-                            Safety is Not Just a Feature,{' '}
+                            Safe Coimbatore Car Travels -{' '}
                             <span className="text-blue-600">
-                                It's Our Promise
+                                Our Safety Promise
                             </span>
                         </h2>
                         <p className="text-xl text-slate-600 leading-relaxed mb-8">
@@ -73,7 +73,7 @@ const Safety = () => {
                         <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-100">
                             <img
                                 src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80"
-                                alt="Safe travel"
+                                alt="Safe Coimbatore Travels - Metro Holidays Car Rental"
                                 className="w-full h-64 object-cover"
                                 loading="lazy"
                                 width="800"

@@ -60,7 +60,7 @@ const Footer = () => {
                             </div>
                         </Link>
                         <p className="text-slate-400 leading-relaxed text-lg">
-                            Elevating your travel experience with premium fleet and professional service. Every mile with us is a memory cherished.
+                            Your trusted Coimbatore travels partner. Offering premium car rentals and taxi service in Coimbatore for local sightseeing, outstation tours, and airport transfers.
                         </p>
 
                     </div>
